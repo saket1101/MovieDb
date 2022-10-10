@@ -52,7 +52,6 @@ const getAllPage = async (req, res) => {
     const limit = size
     try {
         const movies = await Movie.find().limit(limit * 1).skip((page - 1) * limit)
-
         res.status(200).json({
             Total:movies.length,
             movies: movies
